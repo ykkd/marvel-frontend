@@ -1,5 +1,24 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Prerequisite
+
+Before starting this project, ensure that you have the following prerequisites:
+
+1. **Marvel Developer API Key**  
+   This project requires access to the [Marvel Developer API](https://developer.marvel.com/) to fetch data.  
+   Follow these steps to set up your API key:
+
+   - Register at the [Marvel Developer Portal](https://developer.marvel.com/) and create an account.
+   - Go to **My Developer Account** and get your **Public Key** and **Private Key**.
+   - Create a `.env.local` file in the root of your Next.js project and add the following:
+
+     ```env
+     MARVEL_PUBLIC_KEY=your_public_key_here
+     MARVEL_PRIVATE_KEY=your_private_key_here
+     ```
+
+   - Ensure your Next.js project is configured to load environment variables by adding `process.env.MARVEL_PUBLIC_KEY` and `process.env.MARVEL_PRIVATE_KEY` where needed.
+
 ## Getting Started
 
 First, run the development server:
