@@ -10,7 +10,7 @@ const Component = ({
     return (
         <Styled.GridItemArea>
             <Link href={`/character/${character.name}/`} style={Styled.ItemLink()}>
-            <Styled.CharacterImage src={character.thumbnail.path + character.thumbnail.path} alt={character.name ?? ""} />
+            <Styled.CharacterImage src={character.thumbnail.path + '.' + character.thumbnail.extension} alt={character.name ?? ""} />
             <Styled.CharacterName>{character.name}</Styled.CharacterName>
             </Link>
         </Styled.GridItemArea>
