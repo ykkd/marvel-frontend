@@ -3,7 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import Header from "@/app/components/header";
 import Styled from "./styled";
 
-const Component = ({ children, title, description, }: {
+const Component = ({ children }: {
     children?: React.ReactNode;
     title?: string;
     description?: string;

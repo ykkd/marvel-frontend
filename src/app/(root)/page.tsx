@@ -2,7 +2,7 @@
 import Character from "@/app/api/marvel/model/character";
 import useCharacters from "@/app/hooks/use_characters";
 import Component from "./component";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Root() {
   const { characters, error, fetchCharacters } = useCharacters();

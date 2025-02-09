@@ -1,4 +1,3 @@
-'use client';
 import { useRef, useState } from "react";
 import CustomError from "@/app/api/base/custom_error";
 import Character from "@/app/api/marvel/model/character";
@@ -19,12 +18,14 @@ const useCharacters = () => {
                 setTimeout(() => {
                     processing.current = false;
                 }, 2000);
+                console.log(res);
                 setCharacters(res.results);
             })
             .catch((err) => {
                 setTimeout(() => {
                     processing.current = false;
                 }, 2000);
+                console.error(err);
                 setError(err);   
             });
     };
