@@ -23,7 +23,7 @@ class ApiClient {
 
     async request<T>(
         endpoint: string,
-        { method = "GET", headers = {}, body, params }: RequestOptions = {},
+        { method, headers = {}, body, params }: RequestOptions = {},
     ): Promise<T> {
         const url = this.buildUrl(endpoint, params);
         
