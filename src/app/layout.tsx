@@ -1,8 +1,11 @@
+'use client';
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter"
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./theme";
+import Header from "./components/Header";
+import { theme } from "./(root)/theme";
+import defaultMetadata from "./(root)/metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Marvel Sample App",
-  description: "A sample app to discover marvel heroes",
-};
+const metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
@@ -29,6 +29,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
+            <Header />
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>

@@ -1,8 +1,8 @@
 
 'use client';
 import { createTheme } from '@mui/material/styles';
-import Radius from './styles/Radius';
-import Space from './styles/Space';
+import Radius from '../styles/Radius';
+import Space from '../styles/Space';
 
 const radius = Radius();
 const space = Space();
