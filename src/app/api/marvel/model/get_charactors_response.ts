@@ -5,7 +5,7 @@ interface GetCharacterResponse {
     limit: number;
     total: number;
     count: number;
-    results: Character;
+    results: Character[];
 }
 
 export default GetCharacterResponse;
