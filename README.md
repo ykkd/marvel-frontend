@@ -10,14 +10,14 @@ Before starting this project, ensure that you have the following prerequisites:
 
    - Register at the [Marvel Developer Portal](https://developer.marvel.com/) and create an account.
    - Go to **My Developer Account** and get your **Public Key** and **Private Key**.
-   - Create a `.env.local` file in the root of your Next.js project and add the following:
+   - Create a `.env` file in the root of your Next.js project and add the following:
 
      ```env
-     MARVEL_PUBLIC_KEY=your_public_key_here
-     MARVEL_PRIVATE_KEY=your_private_key_here
+     MARVEL_API_PUBLIC_KEY=your_public_key_here
+     MARVEL_API_PRIVATE_KEY=your_private_key_here
      ```
 
-   - Ensure your Next.js project is configured to load environment variables by adding `process.env.MARVEL_PUBLIC_KEY` and `process.env.MARVEL_PRIVATE_KEY` where needed.
+   - Ensure your Next.js project is configured to load environment variables by adding `process.env.MARVEL_API_PUBLIC_KEY` and `process.env.MARVEL_API_PRIVATE_KEY` where needed.
 
 ## Getting Started
 
