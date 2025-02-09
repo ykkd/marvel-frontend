@@ -1,11 +1,11 @@
-import Character from "./Character";
+import Character from "./character";
 
 interface GetCharacterResponse {
     offset: number;
     limit: number;
     total: number;
     count: number;
-    results: Character[];
+    results: Character;
 }
 
 export default GetCharacterResponse;
