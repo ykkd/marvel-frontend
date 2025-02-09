@@ -1,6 +1,5 @@
+import Component from "./component";
 
 export default async function Root() {
-  return (<>
-  <p>Hello, World!</p>
-  </>);
+  return <Component />
 }
