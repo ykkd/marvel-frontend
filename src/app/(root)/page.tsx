@@ -1,7 +1,5 @@
-import { marvelApi } from "../api/marvel/marvelApiClient";
 
-
-export default async function Home() {
+export default async function Root() {
   return (<>
   <p>Hello, World!</p>
   </>);
