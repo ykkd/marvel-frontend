@@ -19,7 +19,7 @@ class MarvelApiClient {
         this.client = new ApiClient(MARVEL_API_BASE_URL);
     }
 
-    async getCharacters(limit = 2, offset = 0): Promise<GetCharacterResponse> {
+    async getCharacters(limit = 100, offset = 0): Promise<GetCharacterResponse> {
         const authParams = generateAuthParams();
         
         const response = await this.client.get<any>("/characters", {
