@@ -1,5 +1,5 @@
-import CustomError from "./customError";
-import RequestOptions from "./requestOptions";
+import CustomError from "./custom_error";
+import RequestOptions from "./request_options";
 
 class ApiClient {
     private baseURL: string;

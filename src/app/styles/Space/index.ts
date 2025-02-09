@@ -1,4 +1,4 @@
-import Dimension from "../Dimension";
+import Dimension from "../dimension";
 
 const Space = () => {
     const dimension = Dimension().dimension;

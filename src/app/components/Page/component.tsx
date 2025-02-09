@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
-import Header from "@/app/components/Header";
+import Header from "@/app/components/header";
 import Styled from "./styled";
 
 const Component = ({ children, title, description, }: {

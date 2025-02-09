@@ -1,4 +1,4 @@
-import Dimension from "../Dimension";
+import Dimension from "../dimension";
 
 const Radius = () => {
     const dimension = Dimension().dimension;
