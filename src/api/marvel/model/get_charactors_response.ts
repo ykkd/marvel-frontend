@@ -1,6 +1,6 @@
 import Character from "./character";
 
-interface GetCharacterResponse {
+interface GetCharactersResponse {
     offset: number;
     limit: number;
     total: number;
@@ -8,4 +8,4 @@ interface GetCharacterResponse {
     results: Character[];
 }
 
-export default GetCharacterResponse;
+export default GetCharactersResponse;

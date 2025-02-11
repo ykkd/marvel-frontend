@@ -1,7 +1,7 @@
 import { MARVEL_API_BASE_URL, MARVEL_API_PRIVATE_KEY, MARVEL_API_PUBLIC_KEY } from '@/consts/constants';
 import crypto from 'crypto';
 import ApiClient from '../base/api_client';
-import GetCharacterResponse from './model/get_charactors_response';
+import GetCharactersResponse from './model/get_charactors_response';
 
 function generateAuthParams() {
     const ts = Date.now().toString();
@@ -19,7 +19,7 @@ class MarvelApiClient {
         this.client = new ApiClient(MARVEL_API_BASE_URL);
     }
 
-    async getCharacters(limit = 100, offset = 0): Promise<GetCharacterResponse> {
+    async getCharacters(limit = 100, offset = 0): Promise<GetCharactersResponse> {
         const authParams = generateAuthParams();
         
         const response = await this.client.get<any>("/characters", {
