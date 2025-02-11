@@ -8,6 +8,8 @@ const CharacterList = styled(List)<ListProps>(({ theme }) => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
+    gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
+    gap: theme.space?.sm,
 }));
 
 const Styled = {

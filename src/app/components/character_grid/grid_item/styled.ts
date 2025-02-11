@@ -11,8 +11,10 @@ const GridItemArea = styled(Box)<BoxProps>(
         alignItems: "center",
         "&:hover": {
             backgroundColor: theme.palette.action.hover,
-            borderRadius: theme.radius?.sm,
-        }
+            // borderRadius: theme.radius?.sm,
+        },
+        borderRadius: theme.radius?.sm,
+        overflow: "hidden",
     })
 );
 
