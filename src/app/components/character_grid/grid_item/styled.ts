@@ -5,7 +5,6 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const GridItemArea = styled(Box)<BoxProps>(
     ({theme}) => ({
-        padding: `0 ${theme.space?.sm}`,
         textAlign: "center",
         display: "flex",
         flexDirection: "column",
@@ -32,18 +31,30 @@ const CharacterImage = styled(LazyLoadImage)(({theme}) => ({
 }));
 
 const CharacterName = styled(Typography)<TypographyProps>(({ theme }) => ({
-    ...theme.typography.body1,
-    color: theme.palette.text.primary,
-    overflow: "hidden",
-    textOverflow: "ellipsis",
-    whiteSpace: "nowrap",
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "100%",
+    textAlign: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    color: "#fff",
+    padding: theme.spacing(0.5, 0),
+    fontSize: theme.typography.body2.fontSize,
 }));
+
+const CharacterImageWrapper = styled("div")({
+    position: "relative",
+    width: "100%",
+    overflow: "hidden",
+    aspectRatio: "1 / 1",
+});
 
 const Styled = {
     GridItemArea,
     ItemLink,
     CharacterImage,
     CharacterName,
+    CharacterImageWrapper,
 };
 
 export default Styled;
