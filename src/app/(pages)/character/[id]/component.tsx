@@ -1,11 +1,16 @@
 import Comic from "@/api/marvel/model/comic";
+import ComicsGrid from "@/app/components/comic_grid";
 
 type Props = {
     comics: Comic[];
+    lastItemRef: (node: HTMLDivElement | null) => void;
 };
 
-const Component = ({ comics }: Props) => {
-    return <p>"CharacterId: {comics.length}"</p>
+const Component = ({ comics, lastItemRef }: Props) => {
+    return <ComicsGrid 
+        comics={comics ?? []}
+        lastItemRef={lastItemRef} 
+    />
 };
 
 export default Component;
