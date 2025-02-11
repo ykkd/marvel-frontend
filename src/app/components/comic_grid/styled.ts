@@ -7,7 +7,7 @@ const ComicList = styled(List)<ListProps>(({ theme }) => ({
     margin: "0 auto",
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "left",
     gap: theme.space?.sm,
 }));
 
