@@ -38,13 +38,19 @@ export default function Root() {
 
   const lastItemRef = useCallback(
     (node: HTMLDivElement | null) => {
-        if (observer.current) observer.current.disconnect();
-        observer.current = new IntersectionObserver((entries) => {
+        if (!node) return;
+
+        if (observer.current) {
+          observer.current.disconnect();
+        }
+        observer.current = new IntersectionObserver(
+          (entries) => {
             if (entries[0].isIntersecting && hasMore) {
               fetchCharacters({ limit: FETCH_CHARACTER_LIMIT, offset: offset });
             }
-        });
-        if (node) observer.current.observe(node);
+          }
+        ); 
+        observer.current.observe(node);
     }, [offset, hasMore]
   );
 
