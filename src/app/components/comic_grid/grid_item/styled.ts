@@ -18,7 +18,6 @@ const ComicInfoContainer = styled(Box)(({ theme }) => ({
 
 const ComicImageContainer = styled(Box)(({ theme }) => ({
   flexShrink: 0,
-  height: "100%",
   width: "min(216px, 30vw)",
 }));
 
@@ -26,7 +25,7 @@ const ComicImage = styled(LazyLoadImage)(({ theme }) => ({
   width: "100%",
   maxHeight: "324px",
   objectFit: "contain",
-  aspectRatio: 216 / 324,      // portrait_incredible利用 ref:https://developer.marvel.com/documentation/images
+  aspectRatio: "216 / 324",      // portrait_incredible利用 ref:https://developer.marvel.com/documentation/images
   borderRadius: theme.radius?.sm,
 }));
 
