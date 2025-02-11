@@ -3,7 +3,7 @@ import Character from "@/api/marvel/model/character";
 import useCharacters from "@/app/hooks/use_characters";
 import Component from "./component";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FETCH_CHARACTER_LIMIT } from "@/consts/constants";
+import { FETCH_CHARACTERS_LIMIT } from "@/consts/constants";
 
 export default function Root() {
   const { count, nextOffset, characters, error, fetchCharacters } = useCharacters();
@@ -14,7 +14,7 @@ export default function Root() {
   const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
-    fetchCharacters({ limit: FETCH_CHARACTER_LIMIT, offset: 0 });
+    fetchCharacters({ limit: FETCH_CHARACTERS_LIMIT, offset: 0 });
   }, []);
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export default function Root() {
 
   // 1ページ目表示用の処理
   useEffect(() => {
-    if (renderingData.length === 0 && data.length >= FETCH_CHARACTER_LIMIT) {
-      setRenderingData(data.slice(0, FETCH_CHARACTER_LIMIT));
+    if (renderingData.length === 0 && data.length >= FETCH_CHARACTERS_LIMIT) {
+      setRenderingData(data.slice(0, FETCH_CHARACTERS_LIMIT));
     }
   }, [data, renderingData]);
 
@@ -37,9 +37,9 @@ export default function Root() {
   // 1秒ごとに、表示中のページ数+2ページ分以上のデータがあるかをチェックし、なければAPI通信を行う
   useEffect(() => {
     const interval = setInterval(() => {
-      const requiredTotal = renderingData.length + FETCH_CHARACTER_LIMIT * 2;
+      const requiredTotal = renderingData.length + FETCH_CHARACTERS_LIMIT * 2;
       if (hasMore && data.length < requiredTotal) {
-        fetchCharacters({ limit: FETCH_CHARACTER_LIMIT, offset: nextOffset });
+        fetchCharacters({ limit: FETCH_CHARACTERS_LIMIT, offset: nextOffset });
       }
     }, 1000);
     return () => clearInterval(interval);
@@ -53,7 +53,7 @@ export default function Root() {
         if (entries[0].isIntersecting) {
           setRenderingData(prev => {
             const start = prev.length;
-            const end = start + FETCH_CHARACTER_LIMIT;
+            const end = start + FETCH_CHARACTERS_LIMIT;
             const nextPage = data.slice(start, end);
             return nextPage.length > 0 ? [...prev, ...nextPage] : prev;
           });

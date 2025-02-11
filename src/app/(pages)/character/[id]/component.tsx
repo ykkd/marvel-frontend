@@ -1,9 +1,11 @@
+import Comic from "@/api/marvel/model/comic";
+
 type Props = {
-    characterId: string;
+    comics: Comic[];
 };
 
-const Component = ({ characterId }: Props) => {
-    return <p>"CharacterId: {characterId}"</p>
+const Component = ({ comics }: Props) => {
+    return <p>"CharacterId: {comics.length}"</p>
 };
 
 export default Component;

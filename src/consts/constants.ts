@@ -3,7 +3,8 @@ export const MARVEL_API_BASE_URL = "http://gateway.marvel.com/v1/public";
 export const MARVEL_API_PUBLIC_KEY = process.env.NEXT_PUBLIC_MARVEL_API_PUBLIC_KEY!;
 export const MARVEL_API_PRIVATE_KEY = process.env.NEXT_PUBLIC_MARVEL_API_PRIVATE_KEY!;
 
-export const FETCH_CHARACTER_LIMIT = 50;
+export const FETCH_CHARACTERS_LIMIT = 50;
+export const FETCH_COMICS_LIMIT = 50;
 
 export const HeaderSize = {
     height: 64,
