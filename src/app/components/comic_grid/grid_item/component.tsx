@@ -1,6 +1,7 @@
 // grid_item/component.tsx
 import Styled from "./styled";
 import Comic from "@/api/marvel/model/comic";
+import DOMPurify from "dompurify";
 
 interface ComponentProps {
   comic: Comic;
@@ -8,6 +9,8 @@ interface ComponentProps {
 }
 
 const Component = ({ comic, lastItemRef }: ComponentProps) => {
+  const sanitizeText = (text: string) => DOMPurify.sanitize(text, { ALLOWED_TAGS: [] });
+
   return (
     <Styled.GridItemArea ref={lastItemRef}>
         <Styled.ComicImageContainer>
@@ -22,7 +25,7 @@ const Component = ({ comic, lastItemRef }: ComponentProps) => {
           </Styled.ComicTitle>
           <Styled.ComicDescription>
             {comic.textObjects && comic.textObjects.length > 0
-              ? comic.textObjects[0].text
+              ? sanitizeText(comic.textObjects[0].text)
               : "No description found."}
           </Styled.ComicDescription>
         </Styled.ComicInfoContainer>
