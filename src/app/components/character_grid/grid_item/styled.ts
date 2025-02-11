@@ -9,12 +9,12 @@ const GridItemArea = styled(Box)<BoxProps>(
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        "&:hover": {
-            backgroundColor: theme.palette.action.hover,
-            // borderRadius: theme.radius?.sm,
-        },
         borderRadius: theme.radius?.sm,
         overflow: "hidden",
+        transition: "transform 0.2s ease-in-out",
+        "&:hover": {
+            transform: "scale(0.95)",
+        },
     })
 );
 
