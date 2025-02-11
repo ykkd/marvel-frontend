@@ -1,3 +1,23 @@
+## Summary
+
+Information
+| Item | Content |
+| --------------------------- | --------------------------------------------------------------------------------------------------- |
+| Runtime Environmen | Node.js 18.20.5 |
+| Programming Language (Version) | TypeScript (5.0) |
+| Navigation | AppRouter |
+| State Management | React Hooks |
+| Main Libraries Used in App | @mui/material, react-lazy-load-image-component, dompurify |
+| Static Analysis Libraries | ESLint, Prettier |
+
+## Screenshots
+
+Top(Characters)            |  Character(List of Comics)
+:-------------------------:|:-------------------------:
+![marvel-frontend-top](https://github.com/user-attachments/assets/1a10c331-fb38-4a5e-abe1-caa2c1787934) | ![marvel-frontend-detail](https://github.com/user-attachments/assets/67d7be9d-5d89-4fa5-b72d-e22e8e3a5f7b)
+
+
+# Description
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Prerequisite
