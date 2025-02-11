@@ -1,62 +1,52 @@
-import { ThumbSize } from "@/consts/constants";
+// styled.ts
 import { Box, BoxProps, Typography, TypographyProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const GridItemArea = styled(Box)<BoxProps>(
-    ({theme}) => ({
-        textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        borderRadius: theme.radius?.sm,
-        overflow: "hidden",
-        transition: "transform 0.2s ease-in-out",
-        "&:hover": {
-            transform: "scale(0.95)",
-        },
-    })
-);
-
-const ItemLink = () => ({
-    textDecoration: "none",
-});
-
-const CharacterImage = styled(LazyLoadImage)(({theme}) => ({
-    width: `${ThumbSize.xs.width}px`,
-    height: `${ThumbSize.xs.height}px`,
-    objectFit: "cover",
-    [theme.breakpoints.up("sm")]: {
-        width: `${ThumbSize.sm.width}px`,
-        height: `${ThumbSize.sm.height}px`,
-    },
+const GridItemArea = styled(Box)<BoxProps>(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  alignItems: "flex-start",
+  maxHeight: "324px",
+  gap: theme.space?.sm,
 }));
 
-const CharacterName = styled(Typography)<TypographyProps>(({ theme }) => ({
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    width: "100%",
-    textAlign: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.6)",
-    color: "#fff",
-    padding: theme.spacing(0.5, 0),
-    fontSize: theme.typography.body2.fontSize,
+const ComicInfoContainer = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  flex: 1,                  
 }));
 
-const CharacterImageWrapper = styled("div")({
-    position: "relative",
-    width: "100%",
-    overflow: "hidden",
-    aspectRatio: "1 / 1",
-});
+const ComicImageContainer = styled(Box)(({ theme }) => ({
+  flexShrink: 0,
+  height: "100%",
+}));
+
+const ComicImage = styled(LazyLoadImage)(({ theme }) => ({
+  width: "100%",
+  objectFit: "contain",
+  aspectRatio: 216 / 324,      // portrait_incredible利用 ref:https://developer.marvel.com/documentation/images
+  borderRadius: theme.radius?.sm,
+}));
+
+const ComicTitle = styled(Typography)<TypographyProps>(({ theme }) => ({
+  fontSize: theme.typography.h6.fontSize,
+  fontWeight: 500,
+  color: theme.palette.text.primary,
+}));
+
+const ComicDescription = styled(Typography)<TypographyProps>(({ theme }) => ({
+  fontSize: theme.typography.body2.fontSize,
+  color: theme.palette.text.secondary,
+}));
 
 const Styled = {
-    GridItemArea,
-    ItemLink,
-    CharacterImage,
-    CharacterName,
-    CharacterImageWrapper,
+  GridItemArea,
+  ComicInfoContainer,
+  ComicImageContainer,
+  ComicImage,
+  ComicTitle,
+  ComicDescription,
 };
 
 export default Styled;

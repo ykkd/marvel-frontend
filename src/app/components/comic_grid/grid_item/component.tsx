@@ -1,21 +1,33 @@
+// grid_item/component.tsx
 import Styled from "./styled";
 import Comic from "@/api/marvel/model/comic";
 
-const Component = ({ 
-    comic,
-    lastItemRef,
-}: { 
-    comic: Comic;
-    lastItemRef?: (node: HTMLDivElement | null) => void;
-}) => {
-    return (
-        <Styled.GridItemArea ref={lastItemRef}>
-            <Styled.CharacterImageWrapper>
-                <Styled.CharacterImage src={comic.thumbnail.path + '/standard_fantastic' + '.' + comic.thumbnail.extension} alt={comic.title ?? ""} />
-                <Styled.CharacterName>{comic.title}</Styled.CharacterName>
-            </Styled.CharacterImageWrapper>
-        </Styled.GridItemArea>
-    );
+interface ComponentProps {
+  comic: Comic;
+  lastItemRef?: (node: HTMLDivElement | null) => void;
+}
+
+const Component = ({ comic, lastItemRef }: ComponentProps) => {
+  return (
+    <Styled.GridItemArea ref={lastItemRef}>
+        <Styled.ComicImageContainer>
+          <Styled.ComicImage
+            src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`}
+            alt={comic.title ?? ""}
+          />
+        </Styled.ComicImageContainer>
+        <Styled.ComicInfoContainer>
+          <Styled.ComicTitle>
+            {comic.title}
+          </Styled.ComicTitle>
+          <Styled.ComicDescription>
+            {comic.textObjects && comic.textObjects.length > 0
+              ? comic.textObjects[0].text
+              : "No description found."}
+          </Styled.ComicDescription>
+        </Styled.ComicInfoContainer>
+    </Styled.GridItemArea>
+  );
 };
 
 export default Component;
