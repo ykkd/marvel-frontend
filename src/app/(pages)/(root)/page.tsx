@@ -6,7 +6,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { FETCH_CHARACTERS_LIMIT } from "@/consts/constants";
 
 export default function Root() {
-  const { count, nextOffset, characters, error, fetchCharacters } = useCharacters();
+  const { count, nextOffset, characters, error, fetchCharacters } =
+    useCharacters();
   const observer = useRef<IntersectionObserver | null>(null);
 
   const [data, setData] = useState<Character[]>([]);
@@ -19,7 +20,7 @@ export default function Root() {
 
   useEffect(() => {
     if (characters.length > 0) {
-      setData(prev => [...prev, ...characters]);
+      setData((prev) => [...prev, ...characters]);
     }
   }, [characters]);
 
@@ -45,24 +46,27 @@ export default function Root() {
     return () => clearInterval(interval);
   }, [data, renderingData, hasMore, nextOffset]);
 
-  const lastItemRef = useCallback((node: HTMLDivElement | null) => {
-    if (!node) return;
-    if (observer.current) observer.current.disconnect();
-    observer.current = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setRenderingData(prev => {
-            const start = prev.length;
-            const end = start + FETCH_CHARACTERS_LIMIT;
-            const nextPage = data.slice(start, end);
-            return nextPage.length > 0 ? [...prev, ...nextPage] : prev;
-          });
-        }
-      },
-      { rootMargin: "100px" }
-    );
-    observer.current.observe(node);
-  }, [data]);
+  const lastItemRef = useCallback(
+    (node: HTMLDivElement | null) => {
+      if (!node) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            setRenderingData((prev) => {
+              const start = prev.length;
+              const end = start + FETCH_CHARACTERS_LIMIT;
+              const nextPage = data.slice(start, end);
+              return nextPage.length > 0 ? [...prev, ...nextPage] : prev;
+            });
+          }
+        },
+        { rootMargin: "100px" },
+      );
+      observer.current.observe(node);
+    },
+    [data],
+  );
 
   useEffect(() => {
     if (error) console.error(error);

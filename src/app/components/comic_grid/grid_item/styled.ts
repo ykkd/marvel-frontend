@@ -13,7 +13,7 @@ const GridItemArea = styled(Box)<BoxProps>(({ theme }) => ({
 const ComicInfoContainer = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  flex: 1,                  
+  flex: 1,
 }));
 
 const ComicImageContainer = styled(Box)(({ theme }) => ({
@@ -25,7 +25,7 @@ const ComicImage = styled(LazyLoadImage)(({ theme }) => ({
   width: "100%",
   maxHeight: "324px",
   objectFit: "contain",
-  aspectRatio: "216 / 324",      // portrait_incredible利用 ref:https://developer.marvel.com/documentation/images
+  aspectRatio: "216 / 324", // portrait_incredible利用 ref:https://developer.marvel.com/documentation/images
   borderRadius: theme.radius?.sm,
 }));
 

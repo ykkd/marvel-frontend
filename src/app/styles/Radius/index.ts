@@ -1,14 +1,14 @@
 import Dimension from "../dimension";
 
 const Radius = () => {
-    const dimension = Dimension().dimension;
+  const dimension = Dimension().dimension;
 
-    return {
-        radius: {
-            sm: dimension.scale[100],
-            md: dimension.scale[200],
-        }
-    };
+  return {
+    radius: {
+      sm: dimension.scale[100],
+      md: dimension.scale[200],
+    },
+  };
 };
 
 export default Radius;

@@ -1,14 +1,14 @@
 import Character from "@/api/marvel/model/character";
 import Component from "./component";
 
-const CharacterGrid = ({ 
-    characters,
-    lastItemRef,
-}: { 
-    characters: Character[];
-    lastItemRef?: (node: HTMLDivElement | null) => void;
- }) => {
-    return <Component characters={characters} lastItemRef={lastItemRef} />;
+const CharacterGrid = ({
+  characters,
+  lastItemRef,
+}: {
+  characters: Character[];
+  lastItemRef?: (node: HTMLDivElement | null) => void;
+}) => {
+  return <Component characters={characters} lastItemRef={lastItemRef} />;
 };
 
 export default CharacterGrid;

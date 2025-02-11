@@ -1,11 +1,11 @@
 import Component from "./component";
 
 type Props = {
-    children?: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 const Page = (props: Props) => {
-    return <Component {...props} />;
+  return <Component {...props} />;
 };
 
 export default Page;

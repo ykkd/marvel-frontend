@@ -9,26 +9,25 @@ interface ComponentProps {
 }
 
 const Component = ({ comic, lastItemRef }: ComponentProps) => {
-  const sanitizeText = (text: string) => DOMPurify.sanitize(text, { ALLOWED_TAGS: [] });
+  const sanitizeText = (text: string) =>
+    DOMPurify.sanitize(text, { ALLOWED_TAGS: [] });
 
   return (
     <Styled.GridItemArea ref={lastItemRef}>
-        <Styled.ComicImageContainer>
-          <Styled.ComicImage
-            src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`}
-            alt={comic.title ?? ""}
-          />
-        </Styled.ComicImageContainer>
-        <Styled.ComicInfoContainer>
-          <Styled.ComicTitle>
-            {comic.title}
-          </Styled.ComicTitle>
-          <Styled.ComicDescription>
-            {comic.textObjects && comic.textObjects.length > 0
-              ? sanitizeText(comic.textObjects[0].text)
-              : "No description found."}
-          </Styled.ComicDescription>
-        </Styled.ComicInfoContainer>
+      <Styled.ComicImageContainer>
+        <Styled.ComicImage
+          src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`}
+          alt={comic.title ?? ""}
+        />
+      </Styled.ComicImageContainer>
+      <Styled.ComicInfoContainer>
+        <Styled.ComicTitle>{comic.title}</Styled.ComicTitle>
+        <Styled.ComicDescription>
+          {comic.textObjects && comic.textObjects.length > 0
+            ? sanitizeText(comic.textObjects[0].text)
+            : "No description found."}
+        </Styled.ComicDescription>
+      </Styled.ComicInfoContainer>
     </Styled.GridItemArea>
   );
 };

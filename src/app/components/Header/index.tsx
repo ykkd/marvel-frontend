@@ -1,7 +1,7 @@
 import Component from "./component";
 
 const Header = () => {
-    return <Component />;
+  return <Component />;
 };
 
 export default Header;

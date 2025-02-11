@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import { Geist, Geist_Mono } from "next/font/google";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter"
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Page from "../../components/page";
 import Space from "../../styles/space";
@@ -25,7 +25,7 @@ export default function CreateLayout({
   const space = Space();
   const theme = createTheme({
     typography: {
-      fontFamily: 'var(--font-roboto)',
+      fontFamily: "var(--font-roboto)",
     },
     radius: radius.radius,
     space: space.space,
@@ -35,14 +35,15 @@ export default function CreateLayout({
     <html lang="en">
       <head>
         <title>Marvel Sample App</title>
-        <meta name="description" content="A sample app to discover marvel heroes" />
+        <meta
+          name="description"
+          content="A sample app to discover marvel heroes"
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-            <Page>
-              {children}
-            </ Page>
+            <Page>{children}</Page>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
