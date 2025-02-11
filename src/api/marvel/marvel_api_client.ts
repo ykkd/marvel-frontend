@@ -1,4 +1,4 @@
-import { MARVEL_API_BASE_URL, MARVEL_API_PRIVATE_KEY, MARVEL_API_PUBLIC_KEY } from '@/app/consts/constants';
+import { MARVEL_API_BASE_URL, MARVEL_API_PRIVATE_KEY, MARVEL_API_PUBLIC_KEY } from '@/consts/constants';
 import crypto from 'crypto';
 import ApiClient from '../base/api_client';
 import GetCharacterResponse from './model/get_charactors_response';

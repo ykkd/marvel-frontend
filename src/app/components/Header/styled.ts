@@ -1,4 +1,4 @@
-import { HeaderSize, LogoSize } from "@/app/consts/constants";
+import { HeaderSize, LogoSize } from "@/consts/constants";
 import { Toolbar, ToolbarProps } from "@mui/material";
 import { alpha, styled } from "@mui/material/styles";
 

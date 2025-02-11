@@ -1,4 +1,4 @@
-import { HeaderSize } from "@/app/consts/constants";
+import { HeaderSize } from "@/consts/constants";
 import { Theme } from "@mui/material/styles";
 
 const Children = (theme: Theme) => ({

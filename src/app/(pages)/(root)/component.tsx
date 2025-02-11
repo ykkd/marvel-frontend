@@ -1,5 +1,5 @@
-import Character from "@/app/api/marvel/model/character";
-import CharacterGrid from "../components/character_grid";
+import Character from "@/api/marvel/model/character";
+import CharacterGrid from "../../components/character_grid";
 
 type Props = {
     characters: Character[] | undefined;

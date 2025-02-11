@@ -1,4 +1,4 @@
-import { ThumbSize } from "@/app/consts/constants";
+import { ThumbSize } from "@/consts/constants";
 import { Box, BoxProps, Typography, TypographyProps } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { LazyLoadImage } from "react-lazy-load-image-component";

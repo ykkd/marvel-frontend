@@ -2,9 +2,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter"
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Page from "../components/page";
-import Space from "../styles/space";
-import Radius from "../styles/radius";
+import Page from "../../components/page";
+import Space from "../../styles/space";
+import Radius from "../../styles/radius";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

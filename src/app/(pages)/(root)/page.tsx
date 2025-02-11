@@ -1,9 +1,9 @@
 "use client";
-import Character from "@/app/api/marvel/model/character";
+import Character from "@/api/marvel/model/character";
 import useCharacters from "@/app/hooks/use_characters";
 import Component from "./component";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FETCH_CHARACTER_LIMIT } from "@/app/consts/constants";
+import { FETCH_CHARACTER_LIMIT } from "@/consts/constants";
 
 export default function Root() {
   const { count, nextOffset, characters, error, fetchCharacters } = useCharacters();

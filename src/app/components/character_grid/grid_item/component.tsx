@@ -1,4 +1,4 @@
-import Character from "@/app/api/marvel/model/character";
+import Character from "@/api/marvel/model/character";
 import Styled from "./styled";
 import Link from "next/link";
 

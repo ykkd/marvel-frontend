@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
-import CustomError from "@/app/api/base/custom_error";
-import Character from "@/app/api/marvel/model/character";
-import { marvelApi } from "../api/marvel/marvel_api_client";
+import CustomError from "@/api/base/custom_error";
+import Character from "@/api/marvel/model/character";
+import { marvelApi } from "../../api/marvel/marvel_api_client";
 
 const useCharacters = () => {
     const processing = useRef(false);
