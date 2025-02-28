@@ -2,7 +2,7 @@
 
 | Item | Content |
 | --------------------------- | --------------------------------------------------------------------------------------------------- |
-| Runtime Environmen | Node.js 18.20.5 |
+| Runtime Environment | Node.js 18.20.5 |
 | Programming Language (Version) | TypeScript (5.0) |
 | Navigation | AppRouter |
 | State Management | React Hooks |
